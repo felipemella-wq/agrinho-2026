@@ -2,112 +2,278 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agro Forte Sustentável</title>
-    <style>
-        /* Estilo do corpo da página */
-        body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: #e0e0e0; /* Fundo cinza */
-            color: #333;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agro Forte Sustentável</title>
 
-        /* Cabeçalho dourado */
-        header {
-            background-color: #bfa34a; /* Dourado suave */
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
 
-        header h1 {
-            font-size: 4em; /* Texto grande */
-            margin: 0;
-        }
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      background:#d9d9d9;
+      color:#222;
+      line-height:1.8;
+    }
 
-        /* Seções */
-        section {
-            padding: 60px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+    /* TOPO */
+    header{
+      background: linear-gradient(90deg, #7a6a2f, #d4af37, #7a6a2f);
+      padding:80px 20px;
+      text-align:center;
+      border-bottom:8px solid #ffffff;
+    }
 
-        section h2 {
-            font-size: 3em;
-            color: #bfa34a; /* Detalhes dourados nos títulos */
-            margin-bottom: 20px;
-        }
+    header h1{
+      font-size:70px;
+      color:white;
+      text-transform:uppercase;
+      letter-spacing:5px;
+      text-shadow:3px 3px 10px rgba(0,0,0,0.4);
+    }
 
-        section p {
-            font-size: 1.5em; /* Texto grande */
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
+    header p{
+      margin-top:20px;
+      font-size:28px;
+      color:#f5f5f5;
+      max-width:1000px;
+      margin-left:auto;
+      margin-right:auto;
+    }
 
-        /* Imagens grandes e responsivas */
-        .image-large {
-            width: 100%;
-            max-height: 600px;
-            object-fit: cover;
-            margin-bottom: 30px;
-            border: 5px solid #bfa34a; /* Borda dourada */
-            border-radius: 10px;
-        }
+    /* CONTEÚDO */
+    .container{
+      width:90%;
+      max-width:1400px;
+      margin:auto;
+      padding:60px 0;
+    }
 
-        /* Rodapé dourado */
-        footer {
-            background-color: #bfa34a;
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
-            font-size: 1.2em;
-        }
+    .section{
+      margin-bottom:80px;
+      background:#eeeeee;
+      border-left:10px solid #d4af37;
+      padding:40px;
+      border-radius:20px;
+      box-shadow:0 5px 20px rgba(0,0,0,0.1);
+    }
 
-        /* Efeito suave nas imagens ao passar o mouse */
-        .image-large:hover {
-            transform: scale(1.05);
-            transition: transform 0.3s ease;
-        }
-    </style>
+    .section h2{
+      font-size:48px;
+      color:#b8860b;
+      margin-bottom:25px;
+    }
+
+    .section p{
+      font-size:28px;
+      text-align:justify;
+      margin-bottom:30px;
+    }
+
+    /* IMAGENS */
+    .image{
+      width:100%;
+      height:600px;
+      object-fit:cover;
+      border-radius:20px;
+      border:8px solid #d4af37;
+      margin-top:20px;
+      margin-bottom:20px;
+      transition:0.4s;
+    }
+
+    .image:hover{
+      transform:scale(1.02);
+    }
+
+    /* GALERIA */
+    .gallery{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:30px;
+      margin-top:30px;
+    }
+
+    .gallery img{
+      width:100%;
+      height:450px;
+      object-fit:cover;
+      border-radius:20px;
+      border:6px solid #d4af37;
+      transition:0.4s;
+    }
+
+    .gallery img:hover{
+      transform:scale(1.03);
+    }
+
+    /* RODAPÉ */
+    footer{
+      background:#b8860b;
+      color:white;
+      text-align:center;
+      padding:40px;
+      font-size:24px;
+      margin-top:50px;
+    }
+
+    /* RESPONSIVO */
+    @media(max-width:900px){
+
+      header h1{
+        font-size:45px;
+      }
+
+      .section h2{
+        font-size:36px;
+      }
+
+      .section p{
+        font-size:22px;
+      }
+
+      .gallery{
+        grid-template-columns:1fr;
+      }
+
+      .image{
+        height:400px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-    <header>
-        <h1>Agro Forte Sustentável</h1>
-    </header>
+  <!-- TOPO -->
+  <header>
+    <h1>AGRO FORTE SUSTENTÁVEL</h1>
 
-    <section>
-        <h2>Nosso Compromisso</h2>
-        <img src="https://images.unsplash.com/photo-1581091012184-14eeb6c8e353" alt="Campo sustentável" class="image-large">
-        <p>
-            O Agro Forte Sustentável é um movimento que visa unir tecnologia, respeito ao meio ambiente e inovação no campo. 
-            Nosso objetivo é garantir produtividade sem comprometer os recursos naturais, incentivando práticas que preservem a biodiversidade e promovam o crescimento econômico das comunidades rurais.
-        </p>
-    </section>
+    <p>
+      Tecnologia, preservação ambiental e desenvolvimento rural unidos para construir
+      um futuro mais produtivo, moderno e sustentável para o agronegócio brasileiro.
+    </p>
+  </header>
 
-    <section>
-        <h2>Tecnologia e Inovação</h2>
-        <img src="https://images.unsplash.com/photo-1590487989024-1a0d6f87a8d6" alt="Tecnologia no agro" class="image-large">
-        <p>
-            A inovação é a chave para um agro mais forte e sustentável. Por meio de drones, sensores e agricultura de precisão, é possível monitorar o solo, a água e as plantações, reduzindo desperdícios e aumentando a eficiência. 
-            A sustentabilidade não é apenas uma escolha, é uma responsabilidade para com o planeta e as futuras gerações.
-        </p>
-    </section>
+  <!-- CONTEÚDO -->
+  <div class="container">
 
-    <section>
-        <h2>Comunidade e Desenvolvimento</h2>
-        <img src="https://images.unsplash.com/photo-1600180758895-1d8d8d47f0a7" alt="Comunidade rural" class="image-large">
-        <p>
-            Investir em educação, capacitação e infraestrutura para as comunidades rurais fortalece o agro nacional. 
-            Com apoio técnico e oportunidades de crescimento, agricultores e produtoras podem implementar práticas sustentáveis e contribuir para um ecossistema agrícola mais resiliente e próspero.
-        </p>
-    </section>
+    <!-- SEÇÃO 1 -->
+    <div class="section">
 
-    <footer>
-        © 2026 Agro Forte Sustentável | Todos os direitos reservados
-    </footer>
+      <h2>O Futuro do Campo Sustentável</h2>
+
+      <p>
+        O Agro Forte Sustentável representa uma nova geração de produção agrícola
+        comprometida com o equilíbrio entre crescimento econômico e preservação da natureza.
+        O agronegócio moderno utiliza tecnologias avançadas para reduzir desperdícios,
+        otimizar o uso da água e preservar os recursos naturais, garantindo alimentos de
+        qualidade e mais eficiência para o campo.
+      </p>
+
+      <p>
+        A sustentabilidade no agro envolve responsabilidade ambiental, inovação tecnológica,
+        valorização das comunidades rurais e desenvolvimento consciente. A utilização de
+        energias renováveis, agricultura de precisão e técnicas sustentáveis permite um
+        aumento significativo da produtividade sem comprometer as futuras gerações.
+      </p>
+
+      <img
+        class="image"
+        src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1600&auto=format&fit=crop"
+        alt="Plantação sustentável"
+      >
+    </div>
+
+    <!-- SEÇÃO 2 -->
+    <div class="section">
+
+      <h2>Tecnologia e Inovação no Agro</h2>
+
+      <p>
+        O avanço tecnológico transformou completamente o setor agrícola. Drones,
+        sensores inteligentes, tratores automatizados e sistemas de monitoramento digital
+        permitem uma produção mais eficiente e sustentável. Essas ferramentas ajudam os
+        produtores a economizar recursos, aumentar a produtividade e proteger o meio ambiente.
+      </p>
+
+      <p>
+        A agricultura inteligente utiliza dados em tempo real para analisar o solo,
+        prever mudanças climáticas e melhorar o desempenho das lavouras. O resultado é
+        um sistema agrícola moderno, competitivo e alinhado com práticas sustentáveis
+        que fortalecem a economia e preservam os ecossistemas naturais.
+      </p>
+
+      <img
+        class="image"
+        src="https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=1600&auto=format&fit=crop"
+        alt="Tecnologia no agro"
+      >
+
+      <!-- GALERIA -->
+      <div class="gallery">
+
+        <img
+          src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=1200&auto=format&fit=crop"
+          alt="Campo agrícola"
+        >
+
+        <img
+          src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=1200&auto=format&fit=crop"
+          alt="Agricultura sustentável"
+        >
+
+        <img
+          src="https://images.unsplash.com/photo-1472396961693-142e6e269027?q=80&w=1200&auto=format&fit=crop"
+          alt="Natureza e sustentabilidade"
+        >
+
+        <img
+          src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop"
+          alt="Paisagem rural"
+        >
+
+      </div>
+
+    </div>
+
+    <!-- SEÇÃO 3 -->
+    <div class="section">
+
+      <h2>Compromisso com o Meio Ambiente</h2>
+
+      <p>
+        O compromisso ambiental é uma das bases do Agro Forte Sustentável.
+        A preservação das florestas, rios e da biodiversidade é essencial para
+        manter o equilíbrio ecológico e garantir um futuro saudável para as próximas gerações.
+      </p>
+
+      <p>
+        O produtor rural moderno entende que produzir com responsabilidade significa
+        investir em práticas sustentáveis, respeitar os ciclos naturais e utilizar
+        os recursos de maneira inteligente. O crescimento econômico pode caminhar
+        lado a lado com a conservação ambiental, criando um modelo agrícola forte,
+        competitivo e sustentável.
+      </p>
+
+      <img
+        class="image"
+        src="https://images.unsplash.com/photo-1499529112087-3cb3b73cec95?q=80&w=1600&auto=format&fit=crop"
+        alt="Agro sustentável"
+      >
+
+    </div>
+
+  </div>
+
+  <!-- RODAPÉ -->
+  <footer>
+    © 2026 - Agro Forte Sustentável | Tecnologia • Natureza • Desenvolvimento
+  </footer>
 
 </body>
 </html>
