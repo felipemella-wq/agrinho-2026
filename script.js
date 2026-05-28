@@ -4,224 +4,219 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agro Forte e Sustentável - O Futuro do Campo</title>
+    <title>Agro Forte e Sustentável - O Manifesto</title>
     <style>
         /* Paleta de Cores e Configurações Base */
         :root {
-            --bg-principal: #1f2124;       /* Cinza antracite escuro */
-            --bg-secundario: #2a2d32;      /* Cinza médio para contraste */
-            --dourado: #dfb73c;             /* Dourado vivo */
-            --dourado-suave: #bc9c31;       /* Dourado escuro para bordas */
-            --texto-principal: #f0f0f2;     /* Branco acinzentado confortável */
-            --texto-mutado: #a0a6b0;        /* Cinza claro para descrições */
+            --bg-principal: #1f2124;       /* Cinza escuro profundo */
+            --bg-secundario: #2a2d32;      /* Cinza intermediário */
+            --dourado: #d4af37;             /* Dourado Metálico */
+            --dourado-brilhante: #f7d774;   /* Dourado para realces */
+            --texto-principal: #e1e4e6;     /* Branco acinzentado confortável para leitura */
+            --texto-mutado: #9ca3af;        /* Cinza claro para subtítulos e dados */
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Georgia', 'Times New Roman', Times, serif; /* Fonte serifada para textos longos */
         }
 
         body {
             background-color: var(--bg-principal);
             color: var(--texto-principal);
             line-height: 1.8;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
 
-        /* Linha de detalhe dourada no topo da página */
-        .linha-topo {
-            height: 5px;
-            background: linear-gradient(90deg, var(--bg-principal), var(--dourado), var(--bg-principal));
-            width: 100%;
+        h1, h2, h3, .btn-dourado {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Sem serifa para títulos */
+            font-weight: 700;
         }
 
-        /* Hero Section (Abertura Grande) */
+        /* Hero Banner (Abertura Impactante) */
         .hero {
-            padding: 6rem 1.5rem 4rem 1.5rem;
+            position: relative;
+            height: 80vh;
+            background: linear-gradient(rgba(31, 33, 36, 0.6), rgba(31, 33, 36, 0.95)), 
+                        url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
+            padding: 2rem;
+            border-bottom: 4px solid var(--dourado);
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 4rem;
             color: var(--dourado);
             text-transform: uppercase;
             letter-spacing: 3px;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
         }
 
-        .hero .subtitulo {
-            font-size: 1.4rem;
-            color: var(--texto-mutado);
+        .hero p {
+            font-size: 1.5rem;
+            color: var(--texto-principal);
+            max-width: 800px;
             font-style: italic;
-            margin-bottom: 2rem;
-        }
-
-        .divisoria-dourada {
-            width: 150px;
-            height: 2px;
-            background-color: var(--dourado);
-            margin: 2rem auto;
         }
 
         /* Container de Conteúdo */
         .container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 4rem 2rem;
         }
 
-        /* Seções de Texto Longo + Imagens Grandes */
-        .secao-agro {
-            display: flex;
-            flex-direction: column;
-            gap: 3rem;
+        /* Estilização de Textos Longos */
+        .artigo-secao {
             margin-bottom: 6rem;
-            background-color: var(--bg-secundario);
-            border: 1px solid rgba(223, 183, 60, 0.15);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
-        /* Imagem Grande ocupando toda a largura ou metade */
-        .imagem-grande {
-            width: 100%;
-            height: 500px; /* Altura imponente para as imagens */
-            object-fit: cover;
-            border-bottom: 4px solid var(--dourado);
-        }
-
-        .texto-longo {
-            padding: 3rem;
-        }
-
-        .texto-longo h2 {
-            color: var(--dourado);
+        .artigo-secao h2 {
             font-size: 2.2rem;
+            color: var(--dourado);
             margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            border-left: 5px solid var(--dourado);
+            padding-left: 1rem;
         }
 
-        /* Detalhe dourado antes do título interno */
-        .texto-longo h2::before {
-            content: '';
-            display: inline-block;
-            width: 12px;
-            height: 12px;
-            background-color: var(--dourado);
-            transform: rotate(45deg);
-        }
-
-        .texto-longo p {
+        .artigo-secao p {
             margin-bottom: 1.5rem;
-            color: var(--texto-principal);
             text-align: justify;
         }
 
-        .texto-longo p:last-child {
-            margin-bottom: 0;
+        /* Imagens Grandes e Destacadas */
+        .imagem-grande {
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            height: 550px;
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+            border-top: 2px solid var(--dourado);
+            border-bottom: 2px solid var(--dourado);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        /* Alceamento de layout para telas maiores (Efeito de alternância) */
-        @media (min-width: 992px) {
-            .secao-agro.alternada {
-                flex-direction: row;
-            }
-            .secao-agro.alternada-inversa {
-                flex-direction: row-reverse;
-            }
-            .imagem-grande {
-                width: 50%;
-                height: auto;
-                min-height: 550px;
-                border-bottom: none;
-            }
-            .secao-agro.alternada .imagem-grande {
-                border-right: 4px solid var(--dourado);
-            }
-            .secao-agro.alternada-inversa .imagem-grande {
-                border-left: 4px solid var(--dourado);
-            }
-            .texto-longo {
-                width: 50%;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                padding: 4rem;
-            }
+        .img-agro-1 {
+            background: url('https://images.unsplash.com/photo-1625246333195-78d9c38ad451?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat fixed;
         }
 
-        /* Rodapé Elegante */
+        .img-agro-2 {
+            background: url('https://images.unsplash.com/photo-1530605663039-d509d06d996f?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat fixed;
+        }
+
+        /* Bloco de Citação em Destaque */
+        .citacao-bloco {
+            background-color: var(--bg-secundario);
+            border-top: 1px solid var(--dourado);
+            border-bottom: 1px solid var(--dourado);
+            padding: 3rem;
+            margin: 4rem 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .citacao-bloco p {
+            font-size: 1.6rem;
+            color: var(--dourado-brilhante);
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        .citacao-bloco span {
+            display: block;
+            margin-top: 1rem;
+            font-size: 1rem;
+            color: var(--texto-mutado);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Rodapé */
         footer {
             background-color: #151618;
-            padding: 3rem 1.5rem;
+            padding: 4rem 2rem;
             text-align: center;
-            border-top: 2px solid var(--dourado);
+            border-top: 3px solid var(--dourado);
             color: var(--texto-mutado);
-            margin-top: 8rem;
-        }
-
-        footer p {
             font-size: 1rem;
         }
 
-        footer .destaque-dourado {
+        footer a {
             color: var(--dourado);
-            font-weight: bold;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--dourado-brilhante);
+        }
+
+        /* Responsividade para Telas Menores */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1.2rem; }
+            .artigo-secao h2 { font-size: 1.8rem; }
+            body { font-size: 1.1rem; }
+            .imagem-grande { height: 350px; }
+            .citacao-bloco { padding: 1.5rem; }
+            .citacao-bloco p { font-size: 1.3rem; }
         }
     </style>
 </head>
 <body>
 
-    <div class="linha-topo"></div>
-
-    <header class="hero">
-        <h1>Agro Forte & Sustentável</h1>
-        <p class="subtitulo">A harmonia exata entre a alta produtividade do campo e a preservação ecossistêmica.</p>
-        <div class="divisoria-dourada"></div>
-    </header>
+    <section class="hero">
+        <h1>O Agro Forte e Sustentável</h1>
+        <p>A ciência, a terra e a responsabilidade social desenhando a nova era da segurança alimentar global.</p>
+    </section>
 
     <main class="container">
 
-        <section class="secao-agro alternada">
-            <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1200&q=80" alt="Plantação vasta e sustentável sob o sol" class="imagem-grande">
-            <div class="texto-longo">
-                <h2>A Nova Era da Produção Consciente</h2>
-                <p>O conceito de um agronegócio forte e sustentável deixou de ser uma tendência de mercado para se transformar em uma necessidade vital global. Diante do desafio de alimentar uma população em constante crescimento, a agricultura moderna responde com responsabilidade, provando que o ganho de eficiência não precisa resultar no desgaste dos recursos naturais do planeta.</p>
-                <p>Através da implementação de técnicas como a rotação de culturas e o plantio direto, produtores conseguem manter a vitalidade do solo por gerações. Esse modelo reduz drasticamente a necessidade de intervenções químicas pesadas, protegendo lençóis freáticos e permitindo que o microecossistema da terra trabalhe a favor da própria lavoura.</p>
-            </div>
-        </section>
+        <article class="artigo-secao">
+            <h2>A Revolução Verde do Século XXI</h2>
+            <p>O conceito de um agronegócio forte e sustentável deixou de ser uma tendência mercadológica para se transformar em uma necessidade vital de sobrevivência global. Diante do crescimento demográfico acelerado e das severas mudanças climáticas que desafiam as fronteiras agrícolas tradicionais, o campo respondeu com o recurso mais valioso disponível: a inteligência tecnológica aliada ao respeito ancestral pela terra.</p>
+            <p>Diferente das décadas passadas, onde o aumento da produção estava invariavelmente atrelado à expansão horizontal de áreas desmatadas, a agricultura moderna opera na verticalização e na eficiência. A otimização dos recursos tornou-se a regra de ouro. Hoje, a preservação ambiental não compete com o lucro; pelo contrário, dados mostram que propriedades que adotam manejos conservacionistas severos reduzem seus custos operacionais a longo prazo, blindam-se contra quebras climáticas e conquistam mercados internacionais com exigências de conformidade ambiental implacáveis.</p>
+            <p>Essa força sustentável se manifesta desde a pequena agricultura familiar, que adota sistemas de policultura e manejo agroecológico, até as grandes corporações agrícolas, que implementam frotas inteiras movidas a biocombustíveis e monitoramento via satélite para evitar o desperdício de insumos essenciais.</p>
+        </article>
 
-        <section class="secao-agro alternada-inversa">
-            <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1200&q=80" alt="Tecnologia e monitoramento de cultivo em detalhes" class="imagem-grande">
-            <div class="texto-longo">
-                <h2>Tecnologia Inteligente e Recursos Renováveis</h2>
-                <p>A força do agro atual está diretamente ligada à ciência. A agricultura de precisão utiliza sensores de umidade, imagens de satélite e mapeamento via inteligência artificial para entender a necessidade exata de cada hectare. O resultado é o uso cirúrgico da água e de bioinsumos, evitando desperdícios e otimizando cada gota de recurso empregado.</p>
-                <p>Além disso, as propriedades rurais modernas atuam como usinas de energia limpa. Telhados de galpões cobertos por painéis fotovoltaicos e a conversão de resíduos orgânicos e biomassa em combustível reduzem a pegada de carbono operacional a quase zero. É a autonomia energética consolidando um ciclo produtivo verdadeiramente fechado e sustentável.</p>
-            </div>
-        </section>
+        <div class="imagem-grande img-agro-1"></div>
 
-        <section class="secao-agro">
-            <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=1200&q=80" alt="Mãos segurando terra fértil com um broto" class="imagem-grande">
-            <div class="texto-longo">
-                <h2>O Impacto Socioeconômico e o Legado para o Futuro</h2>
-                <p>Garantir um agro forte significa blindar a economia e promover a segurança alimentar. No entanto, a verdadeira força reside na longevidade desse impacto. O manejo sustentável preserva as florestas nativas adjacentes, mantém polinizadores naturais ativos e resguarda a rica biodiversidade local, criando uma barreira natural contra pragas e variações climáticas extremas.</p>
-                <p>Ao alinhar o respeito às leis ambientais com o orgulho de produzir, o produtor rural se torna um guardião do bioma. O legado dessa transição ecológica é um ecossistema equilibrado, comunidades locais valorizadas e a certeza de que as próximas gerações herdarão terras ainda férteis, prósperas e capazes de sustentar a vida.</p>
-            </div>
-        </section>
+        <article class="artigo-secao">
+            <h2>Pilares da Produção Consciente</h2>
+            <p>Para sustentar o título de "Forte e Sustentável", o setor apoia-se em pilares fundamentais de engenharia e biologia aplicadas. O primeiro deles é a conservação do solo. Através do Sistema de Plantio Direto (SPD), a palhada da safra anterior é mantida sobre a terra, criando uma manta térmica natural que protege o solo contra a erosão provocada por chuvas torrenciais e mantém a umidade necessária nos períodos de estiagem, reduzindo drasticamente a necessidade de irrigação artificial.</p>
+            <p>O segundo pilar repousa sobre o Manejo Integrado de Pragas (MIP) e o avanço avassalador dos bioinsumos. O uso de defensores biológicos — como fungos, bactérias e insetos benéficos que combatem naturalmente as ameaças às lavouras — cresce a taxas geométricas no mundo inteiro. Isso diminui a dependência de compostos químicos pesados, garantindo alimentos mais limpos e protegendo os lençóis freáticos de contaminações acidentais.</p>
+            <p>Além disso, a Integração Lavoura-Pecuária-Floresta (ILPF) surge como a obra-prima do design sustentável contemporâneo. Ao consorciar árvores, pastagens e grãos em uma mesma área, o produtor gera conforto térmico para o gado, diversifica suas fontes de renda e cria um ecossistema altamente eficiente no sequestro de carbono, neutralizando as emissões de gases de efeito estufa inerentes à atividade biológica animal.</p>
+        </article>
+
+        <div class="citacao-bloco">
+            <p>"Produzir mais com menos impacto não é apenas uma meta de engenharia agrícola, é o compromisso ético da nossa geração com as gerações que herdarão a Terra."</p>
+            <span>— Aliança Global pelo Desenvolvimento Agrícola</span>
+        </div>
+
+        <div class="imagem-grande img-agro-2"></div>
+
+        <article class="artigo-secao">
+            <h2>O Papel da Tecnologia e o Futuro da Transparência</h2>
+            <p>O futuro da sustentabilidade no campo está intrinsecamente ligado à digitalização. A agricultura de precisão utiliza sensores em tempo real inseridos no solo para ditar exatamente a quantidade de água e nutrientes que cada planta necessita, gota a gota. Drones sobrevoam milhares de hectares mapeando focos iniciais de pragas, permitindo intervenções cirúrgicas ao invés de pulverizações generalizadas em toda a propriedade.</p>
+            <p>Somado a isso, sistemas de rastreabilidade baseados em blockchain estão dando voz ao consumidor final. Através de um simples QR Code na embalagem de um produto no supermercado, é possível rastrear toda a jornada daquele alimento: desde as coordenadas geográficas da fazenda onde foi colhido, passando pelas certificações de trabalho justo e ausência de desmatamento ilegal, até o pegada de carbono gerada pelo transporte.</p>
+            <p>O agro forte e sustentável prova que a economia verde é viável, lucrativa e soberana. Proteger os biomas, restaurar áreas degradadas e alimentar bilhões de indivíduos são missões que convergem em uma única direção: o campo é o motor da sustentabilidade global.</p>
+        </article>
 
     </main>
 
     <footer>
-        <p>&copy; 2026 Manifesto Agro Forte & Sustentável. Todos os direitos reservados.</p>
-        <p style="font-size: 0.85rem; margin-top: 0.5rem; color: #7f858d;">Produzido sob a visão de um <span class="destaque-dourado">Futuro Eficiente e Verde</span>.</p>
+        <p>&copy; 2026 Agro Forte & Sustentável. Todos os direitos reservados.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--dourado);">Foco na Conservação, Inovação e Segurança Alimentar Mundial.</p>
     </footer>
 
 </body>
