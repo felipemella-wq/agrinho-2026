@@ -1,278 +1,239 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Agro Forte Sustentável</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agro Forte e Sustentável</title>
+    <style>
+        /* Configurações Globais e Paleta de Cores */
+        :root {
+            --bg-principal: #2e3135;       /* Cinza escuro elegante */
+            --bg-card: #3a3f44;            /* Cinza intermediário para os cards */
+            --dourado: #d4af37;             /* Dourado clássico */
+            --dourado-hover: #f3e5ab;       /* Dourado claro para interações */
+            --texto-claro: #f5f5f5;         /* Branco fosco para leitura */
+            --texto-suave: #b0b5bc;         /* Cinza claro para subtítulos */
+        }
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-    body{
-      font-family: Arial, Helvetica, sans-serif;
-      background:#d9d9d9;
-      color:#222;
-      line-height:1.8;
-    }
+        body {
+            background-color: var(--bg-principal);
+            color: var(--texto-claro);
+            line-height: 1.6;
+        }
 
-    /* TOPO */
-    header{
-      background: linear-gradient(90deg, #7a6a2f, #d4af37, #7a6a2f);
-      padding:80px 20px;
-      text-align:center;
-      border-bottom:8px solid #ffffff;
-    }
+        /* Cabeçalho (Header) */
+        header {
+            border-bottom: 3px solid var(--dourado);
+            padding: 2rem 1rem;
+            text-align: center;
+            background: linear-gradient(135deg, #232529, #2e3135);
+        }
 
-    header h1{
-      font-size:70px;
-      color:white;
-      text-transform:uppercase;
-      letter-spacing:5px;
-      text-shadow:3px 3px 10px rgba(0,0,0,0.4);
-    }
+        header h1 {
+            font-size: 2.5rem;
+            color: var(--dourado);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
 
-    header p{
-      margin-top:20px;
-      font-size:28px;
-      color:#f5f5f5;
-      max-width:1000px;
-      margin-left:auto;
-      margin-right:auto;
-    }
+        header p {
+            color: var(--texto-suave);
+            font-size: 1.1rem;
+            font-style: italic;
+        }
 
-    /* CONTEÚDO */
-    .container{
-      width:90%;
-      max-width:1400px;
-      margin:auto;
-      padding:60px 0;
-    }
+        /* Conteúdo Principal */
+        main {
+            max-width: 1100px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
 
-    .section{
-      margin-bottom:80px;
-      background:#eeeeee;
-      border-left:10px solid #d4af37;
-      padding:40px;
-      border-radius:20px;
-      box-shadow:0 5px 20px rgba(0,0,0,0.1);
-    }
+        /* Seção de Introdução */
+        .introducao {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
 
-    .section h2{
-      font-size:48px;
-      color:#b8860b;
-      margin-bottom:25px;
-    }
+        .introducao h2 {
+            color: var(--dourado);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
 
-    .section p{
-      font-size:28px;
-      text-align:justify;
-      margin-bottom:30px;
-    }
+        /* Detalhe em linha dourada abaixo do título */
+        .introducao h2::after {
+            content: '';
+            display: block;
+            width: 60%;
+            height: 2px;
+            background-color: var(--dourado);
+            margin: 0.5rem auto 0;
+        }
 
-    /* IMAGENS */
-    .image{
-      width:100%;
-      height:600px;
-      object-fit:cover;
-      border-radius:20px;
-      border:8px solid #d4af37;
-      margin-top:20px;
-      margin-bottom:20px;
-      transition:0.4s;
-    }
+        .introducao p {
+            font-size: 1.2rem;
+            color: var(--texto-claro);
+            max-width: 800px;
+            margin: 1.5rem auto 0;
+        }
 
-    .image:hover{
-      transform:scale(1.02);
-    }
+        /* Grid de Imagens e Conteúdo */
+        .grid-agro {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
 
-    /* GALERIA */
-    .gallery{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:30px;
-      margin-top:30px;
-    }
+        .card {
+            background-color: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(212, 175, 55, 0.2); /* Borda dourada sutil */
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
 
-    .gallery img{
-      width:100%;
-      height:450px;
-      object-fit:cover;
-      border-radius:20px;
-      border:6px solid #d4af37;
-      transition:0.4s;
-    }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--dourado);
+        }
 
-    .gallery img:hover{
-      transform:scale(1.03);
-    }
+        .card-imagem {
+            width: 100%;
+            height: 220px;
+            background-color: #4a4f55; /* Placeholder caso a imagem demore a carregar */
+            position: relative;
+        }
 
-    /* RODAPÉ */
-    footer{
-      background:#b8860b;
-      color:white;
-      text-align:center;
-      padding:40px;
-      font-size:24px;
-      margin-top:50px;
-    }
+        /* Imagens utilizando Unsplash (Alta qualidade sobre Agro) */
+        .img-1 {
+            background: url('https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=600&q=80') center/cover no-repeat;
+        }
 
-    /* RESPONSIVO */
-    @media(max-width:900px){
+        .img-2 {
+            background: url('https://images.unsplash.com/photo-1592417817098-8f3d6eb19675?auto=format&fit=crop&w=600&q=80') center/cover no-repeat;
+        }
 
-      header h1{
-        font-size:45px;
-      }
+        .img-3 {
+            background: url('https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?auto=format&fit=crop&w=600&q=80') center/cover no-repeat;
+        }
 
-      .section h2{
-        font-size:36px;
-      }
+        .card-conteudo {
+            padding: 1.5rem;
+        }
 
-      .section p{
-        font-size:22px;
-      }
+        .card-conteudo h3 {
+            color: var(--dourado);
+            margin-bottom: 0.8rem;
+            font-size: 1.4rem;
+        }
 
-      .gallery{
-        grid-template-columns:1fr;
-      }
+        .card-conteudo p {
+            color: var(--texto-suave);
+            font-size: 1rem;
+        }
 
-      .image{
-        height:400px;
-      }
-    }
-  </style>
+        /* Botão de Destaque */
+        .btn-container {
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .btn-dourado {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            border: 2px solid var(--dourado);
+            color: var(--dourado);
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-dourado:hover {
+            background-color: var(--dourado);
+            color: var(--bg-principal);
+            cursor: pointer;
+        }
+
+        /* Rodapé (Footer) */
+        footer {
+            background-color: #232529;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 5rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            color: var(--texto-suave);
+            font-size: 0.9rem;
+        }
+
+        footer span {
+            color: var(--dourado);
+        }
+    </style>
 </head>
-
 <body>
 
-  <!-- TOPO -->
-  <header>
-    <h1>AGRO FORTE SUSTENTÁVEL</h1>
+    <header>
+        <h1>Agro Forte & Sustentável</h1>
+        <p>A força do campo unida à preservação do amanhã</p>
+    </header>
 
-    <p>
-      Tecnologia, preservação ambiental e desenvolvimento rural unidos para construir
-      um futuro mais produtivo, moderno e sustentável para o agronegócio brasileiro.
-    </p>
-  </header>
+    <main>
+        
+        <section class="introducao">
+            <h2>O Futuro da Produção Coexiste com a Natureza</h2>
+            <p>O agronegócio moderno demonstra que produtividade e sustentabilidade caminham juntos. Com o uso de tecnologia de ponta, manejo consciente dos recursos naturais e respeito à biodiversidade, o campo alimenta o mundo enquanto protege o planeta.</p>
+        </section>
 
-  <!-- CONTEÚDO -->
-  <div class="container">
+        <section class="grid-agro">
+            
+            <div class="card">
+                <div class="card-imagem img-1"></div>
+                <div class="card-conteudo">
+                    <h3>Tecnologia no Campo</h3>
+                    <p>Uso de inteligência artificial, drones e sensores para otimizar o uso da água e reduzir a aplicação de insumos, garantindo eficiência máxima com o menor impacto ambiental.</p>
+                </div>
+            </div>
 
-    <!-- SEÇÃO 1 -->
-    <div class="section">
+            <div class="card">
+                <div class="card-imagem img-2"></div>
+                <div class="card-conteudo">
+                    <h3>Energia Renovável</h3>
+                    <p>A integração da produção agrícola com fontes de energia limpa, como a solar e a biomassa, transformando resíduos em combustível para mover a própria operação.</p>
+                </div>
+            </div>
 
-      <h2>O Futuro do Campo Sustentável</h2>
+            <div class="card">
+                <div class="card-imagem img-3"></div>
+                <div class="card-conteudo">
+                    <h3>Preservação e Manejo</h3>
+                    <p>Práticas de plantio direto, rotação de culturas e conservação de florestas nativas que protegem o solo contra a erosão e mantêm o equilíbrio do ecossistema local.</p>
+                </div>
+            </div>
 
-      <p>
-        O Agro Forte Sustentável representa uma nova geração de produção agrícola
-        comprometida com o equilíbrio entre crescimento econômico e preservação da natureza.
-        O agronegócio moderno utiliza tecnologias avançadas para reduzir desperdícios,
-        otimizar o uso da água e preservar os recursos naturais, garantindo alimentos de
-        qualidade e mais eficiência para o campo.
-      </p>
+        </section>
 
-      <p>
-        A sustentabilidade no agro envolve responsabilidade ambiental, inovação tecnológica,
-        valorização das comunidades rurais e desenvolvimento consciente. A utilização de
-        energias renováveis, agricultura de precisão e técnicas sustentáveis permite um
-        aumento significativo da produtividade sem comprometer as futuras gerações.
-      </p>
+        <div class="btn-container">
+            <a href="#" class="btn-dourado">Saiba Mais Sobre Nossos Projetos</a>
+        </div>
 
-      <img
-        class="image"
-        src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1600&auto=format&fit=crop"
-        alt="Plantação sustentável"
-      >
-    </div>
+    </main>
 
-    <!-- SEÇÃO 2 -->
-    <div class="section">
-
-      <h2>Tecnologia e Inovação no Agro</h2>
-
-      <p>
-        O avanço tecnológico transformou completamente o setor agrícola. Drones,
-        sensores inteligentes, tratores automatizados e sistemas de monitoramento digital
-        permitem uma produção mais eficiente e sustentável. Essas ferramentas ajudam os
-        produtores a economizar recursos, aumentar a produtividade e proteger o meio ambiente.
-      </p>
-
-      <p>
-        A agricultura inteligente utiliza dados em tempo real para analisar o solo,
-        prever mudanças climáticas e melhorar o desempenho das lavouras. O resultado é
-        um sistema agrícola moderno, competitivo e alinhado com práticas sustentáveis
-        que fortalecem a economia e preservam os ecossistemas naturais.
-      </p>
-
-      <img
-        class="image"
-        src="https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=1600&auto=format&fit=crop"
-        alt="Tecnologia no agro"
-      >
-
-      <!-- GALERIA -->
-      <div class="gallery">
-
-        <img
-          src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=1200&auto=format&fit=crop"
-          alt="Campo agrícola"
-        >
-
-        <img
-          src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=1200&auto=format&fit=crop"
-          alt="Agricultura sustentável"
-        >
-
-        <img
-          src="https://images.unsplash.com/photo-1472396961693-142e6e269027?q=80&w=1200&auto=format&fit=crop"
-          alt="Natureza e sustentabilidade"
-        >
-
-        <img
-          src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop"
-          alt="Paisagem rural"
-        >
-
-      </div>
-
-    </div>
-
-    <!-- SEÇÃO 3 -->
-    <div class="section">
-
-      <h2>Compromisso com o Meio Ambiente</h2>
-
-      <p>
-        O compromisso ambiental é uma das bases do Agro Forte Sustentável.
-        A preservação das florestas, rios e da biodiversidade é essencial para
-        manter o equilíbrio ecológico e garantir um futuro saudável para as próximas gerações.
-      </p>
-
-      <p>
-        O produtor rural moderno entende que produzir com responsabilidade significa
-        investir em práticas sustentáveis, respeitar os ciclos naturais e utilizar
-        os recursos de maneira inteligente. O crescimento econômico pode caminhar
-        lado a lado com a conservação ambiental, criando um modelo agrícola forte,
-        competitivo e sustentável.
-      </p>
-
-      <img
-        class="image"
-        src="https://images.unsplash.com/photo-1499529112087-3cb3b73cec95?q=80&w=1600&auto=format&fit=crop"
-        alt="Agro sustentável"
-      >
-
-    </div>
-
-  </div>
-
-  <!-- RODAPÉ -->
-  <footer>
-    © 2026 - Agro Forte Sustentável | Tecnologia • Natureza • Desenvolvimento
-  </footer>
+    <footer>
+        <p>&copy; 2026 Agro Forte & Sustentável. Desenvolvido com foco no <span>Futuro Verde</span>.</p>
+    </footer>
 
 </body>
 </html>
