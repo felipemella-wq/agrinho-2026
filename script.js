@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -5,235 +6,224 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agro Forte e Sustentável</title>
     <style>
-        /* Configurações Globais e Paleta de Cores */
+        /* Variáveis de Cores Premium */
         :root {
-            --bg-principal: #2e3135;       /* Cinza escuro elegante */
-            --bg-card: #3a3f44;            /* Cinza intermediário para os cards */
-            --dourado: #d4af37;             /* Dourado clássico */
-            --dourado-hover: #f3e5ab;       /* Dourado claro para interações */
-            --texto-claro: #f5f5f5;         /* Branco fosco para leitura */
-            --texto-suave: #b0b5bc;         /* Cinza claro para subtítulos */
+            --bg-escuro: #1e2022;          /* Cinza antracite profundo */
+            --bg-medio: #2b2e32;           /* Cinza médio para contraste */
+            --dourado: #dfb743;            /* Dourado vivo */
+            --dourado-brilho: #f7e185;     /* Dourado claro para destaques */
+            --texto-principal: #ffffff;    /* Branco puro para títulos */
+            --texto-secundario: #c2c7ce;   /* Cinza claro para blocos de texto */
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
         }
 
         body {
-            background-color: var(--bg-principal);
-            color: var(--texto-claro);
-            line-height: 1.6;
+            background-color: var(--bg-escuro);
+            color: var(--texto-principal);
+            overflow-x: hidden;
         }
 
-        /* Cabeçalho (Header) */
-        header {
-            border-bottom: 3px solid var(--dourado);
-            padding: 2rem 1rem;
-            text-align: center;
-            background: linear-gradient(135deg, #232529, #2e3135);
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            color: var(--dourado);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 0.5rem;
-        }
-
-        header p {
-            color: var(--texto-suave);
-            font-size: 1.1rem;
-            font-style: italic;
-        }
-
-        /* Conteúdo Principal */
-        main {
-            max-width: 1100px;
-            margin: 3rem auto;
-            padding: 0 1.5rem;
-        }
-
-        /* Seção de Introdução */
-        .introducao {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .introducao h2 {
-            color: var(--dourado);
-            font-size: 2rem;
-            margin-bottom: 1rem;
+        /* Hero Section (Abertura com Imagem Gigante) */
+        .hero {
             position: relative;
-            display: inline-block;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 2rem;
+            background: linear-gradient(rgba(30, 32, 34, 0.7), rgba(30, 32, 34, 0.9)), 
+                        url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            border-bottom: 5px solid var(--dourado);
         }
 
-        /* Detalhe em linha dourada abaixo do título */
-        .introducao h2::after {
-            content: '';
+        .hero-conteudo {
+            max-width: 1000px;
+        }
+
+        /* Título Gigante */
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            color: var(--texto-principal);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 span {
+            color: var(--dourado);
             display: block;
-            width: 60%;
-            height: 2px;
-            background-color: var(--dourado);
-            margin: 0.5rem auto 0;
+            font-size: 5rem;
         }
 
-        .introducao p {
-            font-size: 1.2rem;
-            color: var(--texto-claro);
+        /* Subtítulo Grande */
+        .hero p {
+            font-size: 1.8rem;
+            color: var(--texto-secundario);
+            font-weight: 300;
             max-width: 800px;
-            margin: 1.5rem auto 0;
+            margin: 0 auto 2.5rem;
         }
 
-        /* Grid de Imagens e Conteúdo */
-        .grid-agro {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
+        /* Seções de Conteúdo (Linhas Grandes) */
+        .secao-impacto {
+            max-width: 1400px;
+            margin: 8rem auto;
+            padding: 0 2rem;
         }
 
-        .card {
-            background-color: var(--bg-card);
-            border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid rgba(212, 175, 55, 0.2); /* Borda dourada sutil */
-            transition: transform 0.3s ease, border-color 0.3s ease;
+        /* Bloco de Destaque Lado a Lado */
+        .bloco-agro {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            margin-bottom: 8rem;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--dourado);
+        .bloco-agro:nth-child(even) {
+            flex-direction: row-reverse;
         }
 
-        .card-imagem {
-            width: 100%;
-            height: 220px;
-            background-color: #4a4f55; /* Placeholder caso a imagem demore a carregar */
-            position: relative;
-        }
-
-        /* Imagens utilizando Unsplash (Alta qualidade sobre Agro) */
-        .img-1 {
-            background: url('https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=600&q=80') center/cover no-repeat;
-        }
-
-        .img-2 {
-            background: url('https://images.unsplash.com/photo-1592417817098-8f3d6eb19675?auto=format&fit=crop&w=600&q=80') center/cover no-repeat;
-        }
-
-        .img-3 {
-            background: url('https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?auto=format&fit=crop&w=600&q=80') center/cover no-repeat;
-        }
-
-        .card-conteudo {
-            padding: 1.5rem;
-        }
-
-        .card-conteudo h3 {
-            color: var(--dourado);
-            margin-bottom: 0.8rem;
-            font-size: 1.4rem;
-        }
-
-        .card-conteudo p {
-            color: var(--texto-suave);
-            font-size: 1rem;
-        }
-
-        /* Botão de Destaque */
-        .btn-container {
-            text-align: center;
-            margin-top: 4rem;
-        }
-
-        .btn-dourado {
-            display: inline-block;
-            padding: 0.8rem 2rem;
+        /* Imagens Grandes */
+        .imagem-grande {
+            flex: 1.2;
+            height: 550px;
+            border-radius: 4px;
             border: 2px solid var(--dourado);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+        }
+
+        .img-sustentavel {
+            background: url('https://images.unsplash.com/photo-1625246333195-78d9c38ad451?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+        }
+
+        .img-tecnologia {
+            background: url('https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+        }
+
+        /* Textos Grandes das Seções */
+        .texto-grande {
+            flex: 1;
+        }
+
+        .texto-grande h2 {
+            font-size: 3rem;
             color: var(--dourado);
-            text-decoration: none;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        .texto-grande p {
+            font-size: 1.3rem;
+            color: var(--texto-secundario);
+            line-height: 1.8;
+        }
+
+        /* Botão de Destaque Estilizado */
+        .btn-premium {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            font-size: 1.1rem;
             font-weight: bold;
+            color: var(--bg-escuro);
+            background-color: var(--dourado);
+            text-decoration: none;
             text-transform: uppercase;
+            letter-spacing: 1px;
             border-radius: 4px;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(223, 183, 67, 0.3);
         }
 
-        .btn-dourado:hover {
-            background-color: var(--dourado);
-            color: var(--bg-principal);
-            cursor: pointer;
+        .btn-premium:hover {
+            background-color: var(--dourado-brilho);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(223, 183, 67, 0.5);
         }
 
-        /* Rodapé (Footer) */
+        /* Rodapé Lindo e Minimalista */
         footer {
-            background-color: #232529;
+            background-color: #151618;
+            padding: 4rem 2rem;
             text-align: center;
-            padding: 2rem 1rem;
-            margin-top: 5rem;
-            border-top: 1px solid rgba(212, 175, 55, 0.3);
-            color: var(--texto-suave);
-            font-size: 0.9rem;
+            border-top: 1px solid rgba(223, 183, 67, 0.2);
         }
 
-        footer span {
+        footer p {
+            color: var(--texto-secundario);
+            font-size: 1.1rem;
+        }
+
+        footer strong {
             color: var(--dourado);
+        }
+
+        /* Responsividade para Telas Menores (Celulares) */
+        @media (max-width: 968px) {
+            .hero h1 { font-size: 2.8rem; }
+            .hero h1 span { font-size: 3.2rem; }
+            .hero p { font-size: 1.3rem; }
+            
+            .bloco-agro, .bloco-agro:nth-child(even) {
+                flex-direction: column;
+                gap: 2rem;
+                margin-bottom: 5rem;
+            }
+
+            .imagem-grande {
+                width: 100%;
+                height: 350px;
+            }
+
+            .texto-grande h2 { font-size: 2.2rem; }
+            .texto-grande p { font-size: 1.1rem; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Agro Forte & Sustentável</h1>
-        <p>A força do campo unida à preservação do amanhã</p>
-    </header>
+    <section class="hero">
+        <div class="hero-conteudo">
+            <h1>O Futuro é o <span>Agro Forte</span></h1>
+            <p>Liderando a produção global com responsabilidade ecológica, tecnologia de precisão e respeito à terra.</p>
+            <a href="#conteudo" class="btn-premium">Descubra a nossa força</a>
+        </div>
+    </section>
 
-    <main>
-        
-        <section class="introducao">
-            <h2>O Futuro da Produção Coexiste com a Natureza</h2>
-            <p>O agronegócio moderno demonstra que produtividade e sustentabilidade caminham juntos. Com o uso de tecnologia de ponta, manejo consciente dos recursos naturais e respeito à biodiversidade, o campo alimenta o mundo enquanto protege o planeta.</p>
-        </section>
+    <main id="conteudo" class="secao-impacto">
 
-        <section class="grid-agro">
-            
-            <div class="card">
-                <div class="card-imagem img-1"></div>
-                <div class="card-conteudo">
-                    <h3>Tecnologia no Campo</h3>
-                    <p>Uso de inteligência artificial, drones e sensores para otimizar o uso da água e reduzir a aplicação de insumos, garantindo eficiência máxima com o menor impacto ambiental.</p>
-                </div>
+        <div class="bloco-agro">
+            <div class="imagem-grande img-sustentavel"></div>
+            <div class="texto-grande">
+                <h2>Alimentando o Mundo, Preservando o Planeta</h2>
+                <p>A verdadeira força do campo está no equilíbrio. Através de práticas de manejo inteligente, como o plantio direto, rotação de culturas e a conservação ativa de recursos hídricos, provamos diariamente que produzir em alta escala e proteger a biodiversidade são metas complementares.</p>
             </div>
+        </div>
 
-            <div class="card">
-                <div class="card-imagem img-2"></div>
-                <div class="card-conteudo">
-                    <h3>Energia Renovável</h3>
-                    <p>A integração da produção agrícola com fontes de energia limpa, como a solar e a biomassa, transformando resíduos em combustível para mover a própria operação.</p>
-                </div>
+        <div class="bloco-agro">
+            <div class="imagem-grande img-tecnologia"></div>
+            <div class="texto-grande">
+                <h2>Tecnologia de Precisão a Serviço da Vida</h2>
+                <p>O uso de inteligência artificial, dados climáticos avançados, drones e sensores biométricos permite otimizar cada gota de água e cada semente plantada. Diminuímos o desperdício, eliminamos excessos e potencializamos a colheita com precisão cirúrgica e pegada de carbono reduzida.</p>
             </div>
-
-            <div class="card">
-                <div class="card-imagem img-3"></div>
-                <div class="card-conteudo">
-                    <h3>Preservação e Manejo</h3>
-                    <p>Práticas de plantio direto, rotação de culturas e conservação de florestas nativas que protegem o solo contra a erosão e mantêm o equilíbrio do ecossistema local.</p>
-                </div>
-            </div>
-
-        </section>
-
-        <div class="btn-container">
-            <a href="#" class="btn-dourado">Saiba Mais Sobre Nossos Projetos</a>
         </div>
 
     </main>
 
     <footer>
-        <p>&copy; 2026 Agro Forte & Sustentável. Desenvolvido com foco no <span>Futuro Verde</span>.</p>
+        <p>&copy; 2026 <strong>Agro Forte & Sustentável</strong>. Todos os direitos reservados. Compromisso com o amanhã.</p>
     </footer>
 
 </body>
 </html>
+
